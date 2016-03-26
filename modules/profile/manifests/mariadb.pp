@@ -10,8 +10,4 @@ class profile::mariadb {
 
   create_resources(::mysql::db, hiera('databases'))
 
-  supervisord::program { 'mariadb-server':
-    command => '/usr/bin/mysqld_safe',
-  }
-
 }

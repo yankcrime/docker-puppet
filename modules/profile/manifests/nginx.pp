@@ -19,8 +19,4 @@ class profile::nginx {
     require => Class['::nginx'],
   }
 
-  supervisord::program { 'nginx':
-    command => '/usr/sbin/nginx',
-  }
-
 }

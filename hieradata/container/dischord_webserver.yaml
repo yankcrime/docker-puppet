@@ -17,3 +17,7 @@ locations:
     'vhost': 'dischord.org'
     'location': '~ \.php$'
     'fastcgi': 'unix:/var/run/php5-fpm.sock'
+
+service:
+  'nginx':
+    'command': '/usr/sbin/nginx'
