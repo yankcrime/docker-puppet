@@ -1,0 +1,9 @@
+---
+apt::proxy:
+ host: '%{::aptproxy}'
+ port: '3142'
+
+databases:
+  'fever':
+    'user': 'fever'
+    'password': 'xxx'

@@ -1,0 +1,18 @@
+FROM puppet:latest
+MAINTAINER Nick Jones "nick@dischord.org"
+
+ENV FACTER_role='database'
+ENV FACTER_container='dischord_database'
+ENV FACTER_aptproxy='192.168.172.236'
+
+RUN puppet apply --debug --verbose \
+		--modulepath /puppet/modules \
+		--hiera_config /puppet/hiera.yaml \
+		--manifestdir /puppet/ /puppet/default.pp
+
+RUN apt-get -y clean && rm -rf /puppet
+
+EXPOSE 3306
+VOLUME /var/lib/mysql
+
+CMD ["/usr/bin/supervisord", "-n"]

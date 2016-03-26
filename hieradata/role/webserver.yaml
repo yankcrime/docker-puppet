@@ -1,0 +1,4 @@
+---
+classes:
+  - '::profile::nginx'
+  - '::profile::php'

@@ -1,0 +1,10 @@
+# Common classes to install
+#
+classes:
+  - '::apt'
+  - '::profile::common'
+  - '::supervisord'
+
+supervisord::service_manage: false
+supervisord::service_enable: false
+

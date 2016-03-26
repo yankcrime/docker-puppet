@@ -1,0 +1,10 @@
+:hierarchy:
+    - "nodes/%{::hostname}"
+    - "modules/%{calling_module}"
+    - "role/%{::role}"
+    - "container/%{::container}"
+    - common
+:backends:
+    - yaml
+:yaml:
+    :datadir: '/puppet/hieradata'

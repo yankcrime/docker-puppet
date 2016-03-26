@@ -1,0 +1,5 @@
+---
+aptcacherng::service_ensure: false
+aptcacherng::service_enable: false
+aptcacherng::foreground: '1'
+aptcacherng::verboselog: '1'

@@ -1,0 +1,3 @@
+---
+supervisord::executable: '/usr/bin/supervisord'
+supervisord::executable_ctl: '/usr/bin/supervisorctl'

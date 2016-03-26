@@ -1,0 +1,19 @@
+---
+apt::proxy:
+ host: '%{::aptproxy}'
+ port: '3142'
+
+vhosts:
+  'dischord.org':
+    'www_root': '/srv/www/'
+    'try_files':
+      - '$uri'
+      - '$uri/'
+      - '/index.html'
+      - '/index.php?$query_string'
+
+locations:
+  'php-fastcgi':
+    'vhost': 'dischord.org'
+    'location': '~ \.php$'
+    'fastcgi': 'unix:/var/run/php5-fpm.sock'
