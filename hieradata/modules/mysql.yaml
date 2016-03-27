@@ -3,6 +3,6 @@ mysql::server::package_name: 'mariadb-server'
 mysql::server::override_options:
   mysqld:
     bind_address: '0.0.0.0'
-mysql::server::root_passsword: 'UnHucifwyeg2'
+mysql::server::root_passsword: 'xxx'
 mysql::server::service_provider: 'init'
 mysql::client::package_name: 'mariadb-client'

@@ -7,7 +7,8 @@ databases:
   'fever':
     'user': 'fever'
     'password': 'xxx'
+    'host': '%'
 
 service:
   'mariadb-server':
-    'command': '/usr/sbin/mysqld_safe'
+    'command': '/usr/sbin/mysqld'
