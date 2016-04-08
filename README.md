@@ -21,4 +21,6 @@ Dockerfile for any image you're about to build, i.e in
 `docker/dischord/webserver` change the line with `FACTER_aptproxy` to be have your
 `cachier` container's host IP address.
 
-* Then you can build subsequent images, for example: `docker build -t dischord:webserver -f docker/dischord/webserver`
+Then you can build subsequent images, for example: `docker build -t dischord:webserver -f docker/dischord/webserver`
+
+Corresponding blog post here: [http://dischord.org/2016/03/27/docker-and-puppet/](http://dischord.org/2016/03/27/docker-and-puppet/)
