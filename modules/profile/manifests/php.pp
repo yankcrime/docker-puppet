@@ -6,10 +6,14 @@ class profile::php {
 
   php::fpm::conf { 'www':
     listen                    => '/var/run/php5-fpm.sock',
+    listen_owner              => 'www-data',
+    listen_group              => 'www-data',
     user                      => 'www-data',
     security_limit_extensions => '.php',
     require                   => Package['nginx'],
   }
+
+  php::module { ['mcrypt', 'mysql', 'curl', 'gd', 'intl', 'tidy', 'json']: }
 
   file_line { 'php-fpm.conf':
     path    => '/etc/php5/fpm/php-fpm.conf',
