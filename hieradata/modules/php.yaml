@@ -1,0 +1,27 @@
+---
+php::manage_repos: false
+php::dev: false
+php::composer: false
+php::fpm::config::config_file: '/etc/php/7.0/fpm/php-fpm.conf'
+php::fpm::config::pid_file: '/var/run/php/php7.0-fpm.pid'
+php::fpm::config::error_log: '/var/log/php7.0-fpm.log'
+php::fpm::config::user: 'www-data'
+php::fpm::config::group: 'www-data'
+php::fpm::pools:
+  www:
+    listen: '/var/run/php7-fpm.sock'
+    listen_owner: 'www-data'
+    listen_group: 'www-data'
+php::fpm::service::enable: false
+php::fpm_service_name: 'php7.0-fpm'
+php::ext_tool_enable: '/usr/sbin/phpenmod'
+php::ext_tool_query: '/usr/sbin/phpquery'
+php::package_prefix: 'php-'
+php::extensions:
+  json: {}
+  mysql: {}
+  mcrypt: {}
+  curl: {}
+  gd: {}
+  intl: {}
+  tidy: {}

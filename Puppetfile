@@ -12,6 +12,6 @@ mod 'puppetlabs/mysql',
 mod 'markhellewell/aptcacherng'
 mod 'puppetlabs/apt'
 mod 'jfryman/nginx'
-mod 'thias/php'
+mod 'mayflower/php'
 mod 'ajcrowe/supervisord'
 mod 'datacentred/runonce'

@@ -3,7 +3,7 @@ MAINTAINER Nick Jones "nick@dischord.org"
 
 ENV FACTER_role='webserver'
 ENV FACTER_container='dischord_webserver'
-ENV FACTER_aptproxy='192.168.172.236'
+ENV FACTER_aptproxy='192.168.2.115'
 
 RUN puppet apply --verbose --debug \
 		--modulepath /puppet/modules \
