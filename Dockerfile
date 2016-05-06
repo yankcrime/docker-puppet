@@ -8,9 +8,8 @@ ENV FACTER_container='true'
 RUN locale-gen en_US en_US.UTF-8
 RUN dpkg-reconfigure locales
 
-RUN apt-get install -y curl
-
 RUN apt-get update -q && apt-get install -y \
+	curl \
     git \
     python-pip \
     ruby-json \
