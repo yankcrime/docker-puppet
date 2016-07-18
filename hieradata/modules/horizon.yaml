@@ -1,0 +1,16 @@
+---
+horizon::secret_key: '1234567890'
+horizon::keystone_url: 'https://compute.datacentred.io:5000/'
+horizon::compress_offline: false
+horizon::allowed_hosts: '*'
+horizon::server_aliases:
+   - 'compute.datacentred.io'
+   - 'localhost'
+horizon::neutron_options:
+  'enable_lb': true
+  'enable_firewall': true
+  'enable_ha_router': true
+  'enable_vpn': true
+horizon::django_debug: true
+horizon::api_versions:
+  'identity': '2'

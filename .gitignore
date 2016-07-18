@@ -2,3 +2,4 @@ Puppetfile.lock
 .librarian
 .tmp/
 .ruby-version
+tags
