@@ -1,6 +1,10 @@
 FROM ubuntu:trusty
 MAINTAINER Nick Jones "nick@dischord.org"
 
+ENV FACTER_role='horizon'
+
+MOUNT ./puppet:/puppet
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales
@@ -13,12 +17,19 @@ RUN apt-get update -q && apt-get install --no-install-recommends -y \
     ruby-dev \
     puppet \
     supervisor \
-    && apt-get -y clean && rm -rf /var/lib/apt/lists/*
+	&& apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
 RUN gem install hiera-eyaml --no-ri --no-rdoc
 
-RUN mkdir /puppet
+RUN puppet apply --verbose \
+		--modulepath /puppet/modules \
+		--hiera_config /puppet/hiera.yaml \
+		--manifestdir /puppet/ /puppet/default.pp
 
-ONBUILD ADD puppet /puppet
+RUN apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
-# vim:ts=4:sw=4:et:ft=Dockerfile
+EXPOSE 80
+
+CMD ["/usr/bin/supervisord", "-n"]
+
+TAG horizon
