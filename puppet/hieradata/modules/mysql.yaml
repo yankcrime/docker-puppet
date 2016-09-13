@@ -4,5 +4,7 @@ mysql::server::override_options:
   mysqld:
     bind_address: '0.0.0.0'
 mysql::server::root_passsword: 'xxx'
-mysql::server::service_provider: 'init'
+mysql::server::service_provider: 'debian'
+mysql::server::service_manage: true
+mysql::server::service_enabled: true
 mysql::client::package_name: 'mariadb-client'

@@ -1,8 +1,4 @@
 ---
-apt::proxy:
- host: '%{::aptproxy}'
- port: '3142'
-
 vhosts:
   'dischord.org':
     'www_root': '/srv/www/'

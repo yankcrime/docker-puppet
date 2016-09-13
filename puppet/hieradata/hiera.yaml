@@ -2,9 +2,10 @@
     - "nodes/%{::hostname}"
     - "modules/%{calling_module}"
     - "role/%{::role}"
-    - "container/%{::container}"
+    - "domain/%{::domain}/%{::role}"
     - common
 :backends:
     - yaml
+:merge_behaviour: deeper
 :yaml:
-    :datadir: '/puppet/hieradata'
+    :datadir: '/hieradata'

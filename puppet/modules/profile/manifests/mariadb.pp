@@ -4,7 +4,7 @@ class profile::mariadb {
 
   include ::mysql::server
 
-  runonce { 'update_policyd':
+  exec { 'update_policyd':
     command => 'echo -e '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d'
   }-> Class[::mysql::server]
 

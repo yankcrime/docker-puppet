@@ -1,3 +1,6 @@
----
+supervisord::service_manage: false
+supervisord::service_enable: false
 supervisord::executable: '/usr/bin/supervisord'
 supervisord::executable_ctl: '/usr/bin/supervisorctl'
+supervisord::package_provider: 'apt'
+supervisord::install_pip: false
