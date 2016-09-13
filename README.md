@@ -30,7 +30,8 @@ This command ensures Puppet inherits the `webserver` role which declares various
 The can also override any of the variables templated in the Rockerfile.  So for example, to build an image based off Debian 'jessie' instead of Ubuntu 'xenial':
 
 ```shell
-$ rocker build -f common/Rockerfile --vars common/common.yaml --var EXPOSE="3306" --var TAG=dischord:database --var ROLE=database \
+$ rocker build -f common/Rockerfile --vars common/common.yaml \
+--var EXPOSE="3306" --var TAG=dischord:database --var ROLE=database \
 --var BASE="debian:jessie" --var DISTRO_CODENAME="jessie" .
 ```
 
