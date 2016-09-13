@@ -6,7 +6,7 @@ databases:
     'password': 'IgzearronIf7'
     'host': '%'
   'mint':
-    'user': 'mintt'
+    'user': 'mint'
     'password': 'cipht4fravEt'
     'host': '%'
 
