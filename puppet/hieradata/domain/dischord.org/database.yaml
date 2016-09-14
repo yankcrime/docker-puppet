@@ -1,13 +1,12 @@
 ---
-
 databases:
   'fever':
     'user': 'fever'
-    'password': 'IgzearronIf7'
+    'password': 'TuvQuassiaj0'
     'host': '%'
   'mint':
     'user': 'mint'
-    'password': 'cipht4fravEt'
+    'password': 'DugpomAjdas2'
     'host': '%'
 
 service:

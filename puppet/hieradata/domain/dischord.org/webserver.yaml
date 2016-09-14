@@ -13,7 +13,7 @@ locations:
     'www_root': '/srv/www/'
     'vhost': 'dischord.org'
     'location': '~* \.php$'
-    'fastcgi': 'unix:/var/run/php5-fpm.sock'
+    'fastcgi': 'unix:/run/php/php7.0-fpm.sock'
 
 service:
   'nginx':

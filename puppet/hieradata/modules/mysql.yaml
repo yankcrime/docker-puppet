@@ -3,7 +3,7 @@ mysql::server::package_name: 'mariadb-server'
 mysql::server::override_options:
   mysqld:
     bind_address: '0.0.0.0'
-mysql::server::root_passsword: 'xxx'
+mysql::server::root_passsword: 'HyHov7OlRen9'
 mysql::server::service_provider: 'debian'
 mysql::server::service_manage: true
 mysql::server::service_enabled: true

@@ -8,7 +8,5 @@ mod 'puppetlabs/apache'
 mod 'ajcrowe/supervisord'
 mod 'puppetlabs/concat', '1.2.5'
 mod 'jfryman/nginx'
-mod 'invliD/php',
-	:git    => 'https://github.com/invliD/puppet-php.git',
-	:branch => 'xenial-support'
+mod 'thias/php'
 
