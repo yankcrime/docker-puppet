@@ -8,5 +8,6 @@ mod 'puppetlabs/apache'
 mod 'ajcrowe/supervisord'
 mod 'puppetlabs/concat', '1.2.5'
 mod 'jfryman/nginx'
-mod 'thias/php'
-
+mod 'yankcrime/php',
+  :git => 'https://github.com/yankcrime/puppet-php.git',
+  :branch => 'fpm-fixes'

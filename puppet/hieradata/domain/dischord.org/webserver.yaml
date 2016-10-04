@@ -1,4 +1,11 @@
 ---
+php::fpm::daemon::package_name: 'php5.6-fpm'
+php::fpm::daemon::fpm_conf_dir: '/etc/php/5.6/fpm'
+php::fpm::daemon::fpm_pool_dir: '/etc/php/5.6/fpm/pool.d'
+php::fpm::conf::fpm_conf_dir: '/etc/php/5.6/fpm'
+php::fpm::conf::fpm_pool_dir: '/etc/php/5.6/fpm/pool.d'
+php::module::php_package_name: 'php5.6'
+
 vhosts:
   'dischord.org':
     'www_root': '/srv/www/'
@@ -13,7 +20,7 @@ locations:
     'www_root': '/srv/www/'
     'vhost': 'dischord.org'
     'location': '~* \.php$'
-    'fastcgi': 'unix:/run/php/php7.0-fpm.sock'
+    'fastcgi': 'unix:/run/php/php5.6-fpm.sock'
 
 service:
   'nginx':

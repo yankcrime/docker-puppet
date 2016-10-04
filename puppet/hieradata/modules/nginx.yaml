@@ -1,0 +1,6 @@
+---
+nginx::worker_processes: '2'
+nginx::worker_connections: '2048'
+nginx::multi_accept: 'on'
+nginx::http_tcp_nopush: 'on'
+nginx::http_tcp_nodelay: 'on'
