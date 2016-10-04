@@ -1,8 +1,8 @@
 ---
 databases:
-  'mint':
-    'user': 'mint'
-    'password': 'cipht4fravEt'
+  'wordpress':
+    'user': 'wordpress'
+    'password': 'IgzearronIf7'
     'host': '%'
 
 service:
