@@ -1,0 +1,10 @@
+---
+databases:
+  'gallery':
+    'user': 'gallery'
+    'password': 'yasBoxpoHuz4'
+    'host': '%'
+
+service:
+  'mariadb-server':
+    'command': '/usr/sbin/mysqld'

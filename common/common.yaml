@@ -1,8 +1,8 @@
-BASE: 'ubuntu:xenial'
+BASE: 'ubuntu:16.04'
 MAINTAINER: 'nick@dischord.org'
 
 DOCKER_BUILD_DOMAIN: 'dischord.org'
-PUPPET_AGENT_VERSION: '1.6.1'
+PUPPET_AGENT_VERSION: '1.8.2'
 DISTRO_CODENAME: 'xenial'
 PATH: '/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH'
 MOUNT:
