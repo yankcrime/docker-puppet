@@ -1,0 +1,17 @@
+---
+vhosts:
+  'openstackdays.uk':
+    'www_root': '/srv/www/openstackdays.uk'
+    'try_files':
+      - '$uri'
+      - '$uri/'
+      - '/index.html'
+
+locations:
+  'openstackdays.uk':
+    'www_root': '/srv/www/openstackdays.uk'
+    'vhost': 'openstackdays.uk'
+
+service:
+  'nginx':
+    'command': '/usr/sbin/nginx'
