@@ -1,10 +1,19 @@
 ---
 classes:
   - '::profile::postfix'
+  - '::profile::rsyslog'
 
 service:
   'postfix':
-    'command': '/usr/sbin/postfix'
+    command: '/usr/sbin/postfix -c /etc/postfix start'
+    autorestart: 'false'
+  'rsyslog':
+    command: '/usr/sbin/rsyslogd -n'
+    autorestart: 'false'
+  'logtail':
+    'command': '/usr/bin/tail -f /var/log/mail.log'
+    'stdout_logfile': '/dev/fd/1'
+    'stdout_logfile_maxbytes': '0'
 
 mail_aliases:
   'hello@openstackdays.uk':
