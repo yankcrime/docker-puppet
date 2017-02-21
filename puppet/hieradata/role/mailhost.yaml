@@ -1,0 +1,11 @@
+---
+classes:
+  - '::profile::postfix'
+
+service:
+  'postfix':
+    'command': '/usr/sbin/postfix'
+
+mail_aliases:
+  'hello@openstackdays.uk':
+    destination: 'nick@datacentred.co.uk'
