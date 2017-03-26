@@ -4,4 +4,3 @@ classes:
   - '::apt'
   - '::profile::common'
   - '::supervisord'
-  - '::dummy_service'

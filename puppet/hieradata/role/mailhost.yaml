@@ -1,5 +1,6 @@
 ---
 classes:
+  - '::dummy_service'
   - '::profile::postfix'
   - '::profile::rsyslog'
 

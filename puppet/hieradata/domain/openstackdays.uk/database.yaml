@@ -1,7 +1,7 @@
 ---
 databases:
-  'mint':
-    'user': 'mint'
+  'wordpress':
+    'user': 'wordpress'
     'password': 'xxx'
     'host': '%'
 

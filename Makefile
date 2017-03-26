@@ -19,7 +19,7 @@ webserver:
 
 database:
 		NAME=$@ DATE=$(DATE) VCSREF=$(VCSREF) \
-		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="" \
+		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="3306" \
 		--var DOCKER_BUILD_DOMAIN=$(DOMAIN) --var TAG=$(DOMAIN)/$@:$(VCSREF) --var ROLE=$@ .
 
 mailhost:
