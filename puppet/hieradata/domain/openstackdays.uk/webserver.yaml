@@ -6,11 +6,14 @@ vhosts:
       - '$uri'
       - '$uri/'
       - '/index.html'
+      - '/index.php?$query_string'
 
 locations:
   'openstackdays.uk':
     'www_root': '/srv/www/openstackdays.uk'
     'vhost': 'openstackdays.uk'
+    'location': '~* \.php$'
+    'fastcgi': 'unix:/run/php/php7.0-fpm.sock'
 
 service:
   'nginx':
