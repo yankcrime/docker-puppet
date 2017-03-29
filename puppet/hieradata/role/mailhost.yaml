@@ -16,6 +16,11 @@ service:
     'stdout_logfile': '/dev/fd/1'
     'stdout_logfile_maxbytes': '0'
 
+relay_domains:
+  - 'localhost'
+  - 'openstackdays.uk'
+  - 'openstackday.uk'
+
 mail_aliases:
   'hello@openstackdays.uk':
     destination: 'nick@datacentred.co.uk'
