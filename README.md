@@ -1,5 +1,7 @@
 # Building Docker images using Puppet
 
+## _NB:_ The below is now out of date, as the stuff in this repository makes use of Puppet's official container image build module - see https://github.com/puppetlabs/puppetlabs-image_build.  This module largely abstracts away the complexity below and makes things a fair bit more convenient.
+
 This repository tracks files necessary to build my personal Docker images using Puppet to manage configuration.  There's a corresponding blog post that goes into a bit more detail here: http://dischord.org/2016/09/10/more-on-docker-and-puppet/
 
 ## Overview
