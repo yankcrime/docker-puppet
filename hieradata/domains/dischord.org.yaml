@@ -1,0 +1,16 @@
+---
+nginx::nginx_servers:
+  'dischord.org':
+    'www_root': '/srv/www/dischord.org'
+    'try_files':
+      - '$uri'
+      - '$uri/'
+      - '/index.html'
+      - '/index.php?$query_string'
+
+nginx::nginx_locations:
+  'dischord.org':
+    'www_root': '/srv/www/dischord.org'
+    'server': 'dischord.org'
+    'location': '~* \.php$'
+    'fastcgi': 'unix:/var/run/php-fpm.sock'

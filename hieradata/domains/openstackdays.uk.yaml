@@ -1,5 +1,5 @@
 ---
-vhosts:
+nginx::nginx_servers:
   'openstackdays.uk':
     'www_root': '/srv/www/openstackdays.uk'
     'try_files':
@@ -8,13 +8,10 @@ vhosts:
       - '/index.html'
       - '/index.php?$query_string'
 
-locations:
+nginx::nginx_locations:
   'openstackdays.uk':
     'www_root': '/srv/www/openstackdays.uk'
-    'vhost': 'openstackdays.uk'
+    'server': 'openstackdays.uk'
     'location': '~* \.php$'
-    'fastcgi': 'unix:/run/php/php7.0-fpm.sock'
+    'fastcgi': 'unix:/var/run/php-fpm'
 
-service:
-  'nginx':
-    'command': '/usr/sbin/nginx'

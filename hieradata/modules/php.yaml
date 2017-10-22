@@ -1,0 +1,32 @@
+---
+php::ensure: present
+php::manage_repos: false
+php::fpm: true
+php::fpm_user: 'www-data'
+php::fpm_group: 'www-data'
+php::composer: false
+php::pear: false
+php::phpunit: false
+php::settings:
+  'PHP/max_execution_time': '90'
+  'PHP/max_input_time': '300'
+  'PHP/memory_limit': '64M'
+  'PHP/post_max_size': '32M'
+  'PHP/upload_max_filesize': '32M'
+
+php::extensions:
+  mcrypt: {}
+  mysql: {}
+  curl: {}
+  gd: {}
+  intl: {}
+  tidy: {}
+  json: {}
+
+php::fpm_pools:
+  www:
+    listen: '/var/run/php-fpm.sock'
+    listen_owner: 'www-data'
+    listen_group: 'www-data'
+    user: 'www-data'
+    group: 'www-data'

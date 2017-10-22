@@ -8,6 +8,4 @@ class profile::mariadb {
     command => 'echo -e '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d'
   }-> Class[::mysql::server]
 
-  create_resources(::mysql::db, hiera('databases'))
-
 }

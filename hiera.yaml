@@ -1,0 +1,17 @@
+:hierarchy:
+    - "nodes/%{::hostname}"
+    - "domains/%{::domain}"
+    - "domains/%{::domain}/modules/%{calling_module}"
+    - "modules/%{calling_module}"
+    - common
+:backends:
+    - eyaml
+    - yaml
+:merge_behavior: deeper
+:yaml:
+    :datadir: '/hieradata'
+:eyaml:
+    :extension: 'yaml'
+    :datadir: '/hieradata'
+    :pkcs7_private_key: '/keys/private_key.pkcs7.pem'
+    :pkcs7_public_key: '/keys/public_key.pkcs7.pem'

@@ -1,0 +1,14 @@
+---
+nginx::nginx_servers:
+  'chamonixit.com':
+    'www_root': '/srv/www/chamonixit.com'
+    'try_files':
+      - '$uri'
+      - '$uri/'
+      - '/index.html'
+
+nginx::nginx_locations:
+  'chamonixit.com':
+    'www_root': '/srv/www/chamonixit.com'
+    'server': 'chamonixit.com'
+    'location': '~*'

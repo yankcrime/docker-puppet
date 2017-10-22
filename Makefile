@@ -1,31 +1,23 @@
-DOMAIN=dischord.org
-BASE='ubuntu:16.04'
-DISTRO_CODENAME='xenial'
 VCSREF=$(shell git rev-parse --short HEAD)
 DATE=$(shell date --rfc-3339=date)
 
-all:	base webserver database mailhost
-.PHONY:	base webserver database mailhost clean
+PDB=puppet docker build --rocker --label-schema \
+                --module-path modules --cmd '/usr/bin/supervisord,-n' \
+                --factfile=env/$(DOMAIN).txt \
+				--no-inventory \
+                --image-name $@
 
-base:
-		NAME=$@ DATE=$(DATE) VCSREF=$(VCSREF) \
-		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="22" \
-		--var DOCKER_BUILD_DOMAIN=$(DOMAIN) --var TAG=$(DOMAIN)/$@:$(VCSREF) --var ROLE=$@ .
+all:	base webserver mailhost
+.PHONY:	base webserver mailhost clean
 
 webserver:
-		NAME=$@ DATE=$(DATE) VCSREF=$(VCSREF) BASE=$(BASE) \
-		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="80" \
-		--var DOCKER_BUILD_DOMAIN=$(DOMAIN) --var TAG=$(DOMAIN)/$@:$(VCSREF) --var ROLE=$@ .
-
-database:
-		NAME=$@ DATE=$(DATE) VCSREF=$(VCSREF) \
-		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="3306" \
-		--var DOCKER_BUILD_DOMAIN=$(DOMAIN) --var TAG=$(DOMAIN)/$@:$(VCSREF) --var ROLE=$@ .
+		$(PDB) --expose=80 --from debian:jessie-slim
+		docker tag $@ $(DOMAIN)/$@:$(VCSREF)
 
 mailhost:
-		NAME=$@ DATE=$(DATE) VCSREF=$(VCSREF) \
-		rocker build --no-cache -f common/Rockerfile --vars common/common.yaml --var EXPOSE="25" \
-		--var DOCKER_BUILD_DOMAIN=$(DOMAIN) --var TAG=$(DOMAIN)/$@:$(VCSREF) --var ROLE=$@ .
+		$(PDB) --expose=25 --from debian:stretch-slim
+		docker tag $@ $(DOMAIN)/$@:$(VCSREF)
 
 clean:
 		yes | docker image prune
+		yes | docker rm -v $(docker ps -a -q -f status=created)

@@ -1,5 +1,0 @@
----
-classes:
-  - '::profile::nginx'
-  - '::profile::php'
-  - '::dummy_service'

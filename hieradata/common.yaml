@@ -3,4 +3,3 @@
 classes:
   - '::apt'
   - '::profile::common'
-  - '::supervisord'
